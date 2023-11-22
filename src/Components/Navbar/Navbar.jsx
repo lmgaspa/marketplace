@@ -1,14 +1,20 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import './Navbar.css';
 import logo from '../Assets/logo.png';
 import cart_icon from '../Assets/cart_icon.png';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { ShopContext } from '../../Context/ShopContext';
 import loginicon from '../Assets/login-icon.jpg'
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { getTotalCartItems } = useContext(ShopContext);
+  const location = useLocation();
+
+  // Close the menu when the location (URL) changes
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location]);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
