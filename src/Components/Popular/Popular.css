@@ -1,26 +1,81 @@
 .popular {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  height: auto;
+  margin-bottom: 40px;
 }
 
-.popular h1{
-    color: #171717;
-    font-size: 50px;
-    font-weight: 600;
+.popular h1 {
+  color: #171717;
+  font-size: 50px;
+  font-weight: 600;
 }
 
-.popular hr{
-    width: 200px;
-    height: 6px;
-    border-radius: 10px;
-    background: #252525;
+.popular hr {
+  width: 200px;
+  height: 6px;
+  border-radius: 10px;
+  background: #252525;
 }
 
 .popular-item {
-    margin-top: 50px;
+  display: flex;
+  gap: 30px;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  width: 90%;
+  margin-top: 20px;
+}
+
+.popular-item > * {
+  flex: 1 1 calc(20% - 55px);
+  box-sizing: border-box;
+}
+
+.popular-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media screen and (min-width: 601px) and (max-width: 1023px) {
+  .popular {
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .popular-item {
+    width: 90%;
+    box-sizing: border-box;
+    padding: 10px;
+  }
+
+}
+
+@media screen and (min-width: 0px) and (max-width: 600px) {
+  .popular {
+    height: auto;
+    margin-bottom: 20px;
     display: flex;
-    gap: 30px;
+  }
+
+  .popular h1 {
+    margin-top: 30px;
+    font-size: 28px;
+  }
+
+  .popular-item {
+    width: auto;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-top: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  .popular-item div {
+    width: 100%;
+  }
 }

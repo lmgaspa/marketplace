@@ -18,7 +18,7 @@ const CartItems = () => {
       <hr />
       {all_product.map((e) => {
         if (cartItems[e.id] > 0) {
-          return <div>
+          return <div key={e.id}>
             <div className="cartitems-format cartitems-format-main">
               <img src={e.image} alt="" className='carticon-product-icon' />
               <p>{e.name}</p>
@@ -49,7 +49,9 @@ const CartItems = () => {
             <h3>Total</h3>
             <h3>${getTotalCartAmount()}</h3>
           </div>
+          <div className='cartitem-checkout'>
           <button>PROCEED TO CHECKOUT</button>
+          </div>
         </div>
       <div className="cartitems-promocode">
         <p>If you have a promo code, Enter it here</p>

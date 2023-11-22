@@ -11,7 +11,7 @@
     gap: 10px;
 }
 
-.nav-logo p{
+.nav-logo p {
     color: #171717;
     font-size: 38px;
     font-weight: 600;
@@ -27,7 +27,7 @@
     font-weight: 500;
 }
 
-.nav-menu li{
+.nav-menu li {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -36,7 +36,7 @@
     cursor: pointer;
 }
 
-.nav-menu hr{
+.nav-menu hr {
     border: none;
     width: 80%;
     height: 3px;
@@ -79,4 +79,120 @@
     font-size: 14px;
     background: red;
     color: white;
+}
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.login-inv {
+    display: none;
+    width: 40px;
+}
+
+@media screen and (min-width: 0px) and (max-width: 1000px) {
+    .navbar.open {
+        height: auto;
+        padding-bottom: 180px;
+    }
+
+    .navbar.closed {
+        height: 70px;
+    }
+
+    .nav-menu.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 90px;
+        left: 0;
+        width: 100%;
+        transition: all 0.4s ease;
+        z-index: 1;
+        gap: 20px;
+    }
+
+    .nav-menu.open li {
+        font-size: 16px;
+      }
+
+    .navbar {
+        transition: all 0.4s ease;
+    }
+
+    .navbar ul {
+        display: none;
+    }
+
+    .navbar p {
+        display: none;
+    }
+
+    .navbar button {
+        display: none;
+    }
+
+    .login-inv {
+        display: flex;
+        margin-bottom: 10px;
+    }
+
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+        order: 3;
+        padding-left: 10px;
+        padding-top: 15px;
+        transition: all 0.4s ease;
+    }
+
+    .nav-login-cart {
+        margin-left: auto;
+        gap: 10px;
+    }
+
+    .nav-login-cart img {
+        margin-right: 0px;
+    }
+
+    .nav-cart-count {
+        margin-bottom: 5px;
+        gap: 0;
+        margin-left: -20px;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        transition: all 0.4s ease;
+    }
+
+    .nav-menu.open {
+        display: flex;
+    }
+
+    .navbar.open .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .navbar.open .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .navbar.open .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
 }
