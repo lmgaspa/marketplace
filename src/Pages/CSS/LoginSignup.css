@@ -12,7 +12,7 @@
     background: #fce3fe;
     margin: auto;
     padding: 40px 60px;
-    height: auto;
+    height: auto;   
 }
 
 .loginsignup-container h1 {
@@ -103,11 +103,11 @@
         width: auto;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: center;;
     }
 
     .loginsignup-container input{
-        width: 360px;
+        width: 300px;
     }
 
     .loginsignup-container button {

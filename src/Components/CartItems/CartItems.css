@@ -203,6 +203,7 @@
     .cartitems-promobox {
         width: 250px;
         padding: 0;
+        margin-bottom: 100px;
     }
 
     .cartitems-promobox button {
