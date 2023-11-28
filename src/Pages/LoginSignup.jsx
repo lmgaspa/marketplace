@@ -15,13 +15,14 @@ const LoginSignup = () => {
         <p className="loginsignup-login">
           Already have an account? <span>Login here</span>
         </p>
-        <div className="loginsignup-agree">
-          <input type="checkbox" name='' id=''/>
-          <p>By continuing, i agree to the terms of use & privacy police</p>
-        </div>
       </div>
     </div>
   )
 }
 
 export default LoginSignup
+
+        /*  <div className="loginsignup-agree">
+          <input type="checkbox" name='' id='' required/>
+          <p>By continuing, i agree to the terms of use & privacy police</p>
+        </div> */

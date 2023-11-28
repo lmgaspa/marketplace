@@ -11,7 +11,6 @@ const Navbar = () => {
   const { getTotalCartItems } = useContext(ShopContext);
   const location = useLocation();
 
-  // Close the menu when the location (URL) changes
   useEffect(() => {
     setMenuOpen(false);
   }, [location]);
@@ -24,7 +23,7 @@ const Navbar = () => {
     <div className={`navbar ${menuOpen ? 'open' : 'closed'}`}>
       <div className="nav-logo">
         <img src={logo} alt="" />
-        <p>SHOPPER</p>
+        <p><Link to="./" style={{textDecoration: 'none'}}>SHOPPER</Link></p>
       </div>
       <div className="menu-icon" onClick={toggleMenu}>
         <div className="bar"></div>

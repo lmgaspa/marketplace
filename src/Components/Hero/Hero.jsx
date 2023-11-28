@@ -2,6 +2,7 @@ import React from 'react'
 import './Hero.css'
 import hand_icon from '../Assets/hand_icon.png'
 import hero_image from '../Assets/hero_image.png'
+import { Link } from 'react-router-dom'
 
 const Hero = () => {
   return (
@@ -17,7 +18,11 @@ const Hero = () => {
           <p>for everyone</p>
         </div>
         <div className="hero-latest-btn">
-          <button>Latest Colletion</button>
+          <Link to="/latest" style={{ textDecoration: 'none', color: 'white' }}>
+            <button>
+              Latest Collection
+            </button>
+          </Link>
         </div>
       </div >
       <div className="hero-right">

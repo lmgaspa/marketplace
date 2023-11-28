@@ -1,0 +1,43 @@
+.company-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .company-name {
+    color: #333;
+  }
+
+  .company-container h1 {
+    margin-bottom: 20px;
+  }
+
+  .company-container h2 {
+    margin-bottom: 20px;
+  }
+  
+  .company-description {
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  .company-values-heading {
+    color: #333;
+    margin-top: 20px;
+  }
+  
+  .company-values-list {
+    color: #555;
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .company-thank-you {
+    color: #333;
+    margin-top: 20px;
+  }
+  

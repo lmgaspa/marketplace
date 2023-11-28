@@ -17,6 +17,8 @@
 
 .loginsignup-container h1 {
     margin: 20px 0px;
+    display: flex;
+    justify-content: center;
 }
 
 .loginsignup-fields {

@@ -1,0 +1,53 @@
+.checkoffers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    height: auto;
+    margin-bottom: 40px;
+    margin-top: 20px;
+  }
+  
+  .checkoffers h1 {
+    color: #171717;
+    font-size: 50px;
+    font-weight: 600;
+  }
+  
+  .checkoffers hr {
+    width: 200px;
+    height: 6px;
+    border-radius: 10px;
+    background: #252525;
+  }
+  
+  .checkoffers-item {
+    margin-top: 50px;
+    display: flex;
+    gap: 30px;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    width: 90%;
+    margin-top: 20px;
+  }
+  
+  .checkoffers-item > * {
+    flex: 1 1 calc(25% - 30px);
+    box-sizing: border-box;
+  }
+  
+  .checkoffers-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  @media screen and (min-width: 0px) and (max-width: 600px) {
+    .checkoffers h1 {
+        margin-top: 30px;
+        font-size: 28px;
+      }
+
+  .checkoffers-item > * {
+    flex: 1 1 calc(50% - 15px);
+  }}
