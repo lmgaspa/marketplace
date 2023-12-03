@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Shop from './Pages/Shop';
 import ShopCategory from './Pages/ShopCategory';
 import Product from './Pages/Product';
-import LoginSignup from './Pages/LoginSignup';
+import LoginSignIn from './Pages/LoginSignIn';
 import Cart from './Pages/Cart';
 import Footer from './Components/Footer/Footer';
 import men_banner from './Components/Assets/banner_mens.png';
@@ -16,6 +16,7 @@ import Company from './PagesFooter/Company';
 import ProductsFooter from './PagesFooter/ProductsFooter';
 import Latest from './Components/Latest/Latest';
 import CheckOffers from './Components/CheckOffers/CheckOffers';
+import Signup from './Pages/Signup';
 
 function App() {
   return (
@@ -37,7 +38,8 @@ function App() {
             <Route path=':productId' element={<Product/>}/>
           </Route>
           <Route path='/cart' element={<Cart/>}/>
-          <Route path='/login' element={<LoginSignup/>}/>
+          <Route path='/login' element={<LoginSignIn/>}/>
+          <Route path='/signup' element={<Signup/>}/>
         </Routes>
       </BrowserRouter>
       <Footer />

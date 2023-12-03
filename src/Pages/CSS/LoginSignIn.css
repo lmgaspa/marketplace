@@ -1,0 +1,130 @@
+.loginsignin {
+    width: 100%;
+    height: auto;
+    background: white;
+    padding-top: 10px;
+    padding-bottom: 50px;
+}
+
+.loginsignin-container {
+    width: 580px;
+    height: 600px;
+    background: #fce3fe;
+    margin: auto;
+    padding: 40px 60px;
+    height: auto;   
+}
+
+.loginsignin-container h1 {
+    margin: 20px 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.loginsignin-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 29px;
+    margin-top: 30px;
+}
+
+.loginsignin-fields input {
+    height: 72px;
+    width: 100%;
+    padding-left: 20px;
+    border: 1px solid #c9c9c9;
+    outline: none;
+    color: #5c5c5c;
+    font-size: 18px;
+    border-radius: 30px;
+}
+
+.loginsignin-container button {
+    width: 580px;
+    height: 72px;
+    color: white;
+    background: #ff4141;
+    margin-top: 30px;
+    border: none;
+    border-radius: 30px;
+    font-size: 24px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.loginsignin-login {
+    margin-top: 20px;
+    color: #5c5c5c;
+    font-size: 18px;
+    font-weight: 500;
+    
+    display: flex;
+    justify-content: center;
+}
+
+.loginsignin-login span {
+    color: #ff4141;
+    font-weight: 600;
+    padding-left: 20px;
+}
+
+.loginsignin-agree {
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+    gap: 20px;
+    color: #5c5c5c;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+@media screen and (min-width: 780px) and (max-width: 1000px) {
+  
+    .loginsignin-container {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .loginsignin-container input{
+        width: 500px;
+    }
+
+    .loginsignin-container button {
+        width: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .loginsignin-agree input {
+        width: auto;
+    }
+}
+
+@media screen and (min-width: 0px) and (max-width: 779px) {
+    .loginsignin-container {
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;;
+    }
+
+    .loginsignin-container input{
+        width: 300px;
+    }
+
+    .loginsignin-container button {
+        width: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .loginsignin-agree input {
+        width: auto;
+    }
+}

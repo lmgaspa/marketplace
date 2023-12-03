@@ -1,4 +1,4 @@
-.loginsignup {
+.signup {
     width: 100%;
     height: auto;
     background: white;
@@ -6,7 +6,7 @@
     padding-bottom: 50px;
 }
 
-.loginsignup-container {
+.signup-container {
     width: 580px;
     height: 600px;
     background: #fce3fe;
@@ -15,20 +15,20 @@
     height: auto;   
 }
 
-.loginsignup-container h1 {
+.signup-container h1 {
     margin: 20px 0px;
     display: flex;
     justify-content: center;
 }
 
-.loginsignup-fields {
+.signup-fields {
     display: flex;
     flex-direction: column;
     gap: 29px;
     margin-top: 30px;
 }
 
-.loginsignup-fields input {
+.signup-fields input {
     height: 72px;
     width: 100%;
     padding-left: 20px;
@@ -39,7 +39,7 @@
     border-radius: 30px;
 }
 
-.loginsignup-container button {
+.signup-container button {
     width: 580px;
     height: 72px;
     color: white;
@@ -52,16 +52,20 @@
     cursor: pointer;
 }
 
-.loginsignup-login {
+.signup-login {
     margin-top: 20px;
     color: #5c5c5c;
     font-size: 18px;
     font-weight: 500;
+    
+    display: flex;
+    justify-content: center;
 }
 
-.loginsignup-login span {
+.signup-login span {
     color: #ff4141;
     font-weight: 600;
+    padding-left: 20px;
 }
 
 .loginsignup-agree {
@@ -76,18 +80,18 @@
 
 @media screen and (min-width: 780px) and (max-width: 1000px) {
   
-    .loginsignup-container {
+    .signup-container {
         width: 60%;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    .loginsignup-container input{
+    .signup-container input{
         width: 500px;
     }
 
-    .loginsignup-container button {
+    .signup-container button {
         width: 400px;
         display: flex;
         justify-content: center;
@@ -95,24 +99,24 @@
         padding: 10px;
     }
 
-    .loginsignup-agree input {
+    .signup-agree input {
         width: auto;
     }
 }
 
 @media screen and (min-width: 0px) and (max-width: 779px) {
-    .loginsignup-container {
+    .signup-container {
         width: auto;
         display: flex;
         flex-direction: column;
         align-items: center;;
     }
 
-    .loginsignup-container input{
+    .signup-container input{
         width: 300px;
     }
 
-    .loginsignup-container button {
+    .signup-container button {
         width: 300px;
         display: flex;
         justify-content: center;
@@ -120,7 +124,7 @@
         padding: 10px;
     }
 
-    .loginsignup-agree input {
+    .signup-agree input {
         width: auto;
     }
 }
