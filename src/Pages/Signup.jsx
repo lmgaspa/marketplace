@@ -19,7 +19,7 @@ const Signup = () => {
 
   const onSubmit = async (values) => {
     try {
-      const response = await fetch('http://152.67.40.201:4406/register', {
+      const response = await fetch('https://152.67.40.201:4406/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
