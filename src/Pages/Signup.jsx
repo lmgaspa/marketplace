@@ -3,6 +3,7 @@ import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import './CSS/Signup.css';
 import { Link } from 'react-router-dom';
+import MyGoogleLogin from './Google';
 
 const Signup = () => {
   const initialValues = {
@@ -62,6 +63,9 @@ const Signup = () => {
                 <span>Login here</span>
               </Link>
             </p>
+            <div id="googleAuth" className='gauth'>
+                  <MyGoogleLogin />
+                </div>
           </div>
         </div>
       </Form>

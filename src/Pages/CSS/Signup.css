@@ -6,6 +6,12 @@
     padding-bottom: 50px;
 }
 
+.gauth {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
 .signup-container {
     width: 580px;
     height: 600px;
