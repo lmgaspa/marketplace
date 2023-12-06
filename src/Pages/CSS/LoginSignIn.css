@@ -6,6 +6,12 @@
     padding-bottom: 50px;
 }
 
+.gauth {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
 .loginsignin-container {
     width: 580px;
     height: 600px;
@@ -39,7 +45,7 @@
     border-radius: 30px;
 }
 
-.loginsignin-container button {
+.button1 {
     width: 580px;
     height: 72px;
     color: white;
@@ -91,7 +97,17 @@
         width: 500px;
     }
 
-    .loginsignin-container button {
+    .containerbutton {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+  
+    }
+
+
+
+    .button1 {
         width: 400px;
         display: flex;
         justify-content: center;
@@ -116,7 +132,11 @@
         width: 300px;
     }
 
-    .loginsignin-container button {
+    .loginsignin-login {
+        font-size: 14px;
+    }
+
+    .button1 {
         width: 300px;
         display: flex;
         justify-content: center;

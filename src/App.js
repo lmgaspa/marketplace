@@ -17,6 +17,7 @@ import ProductsFooter from './PagesFooter/ProductsFooter';
 import Latest from './Components/Latest/Latest';
 import CheckOffers from './Components/CheckOffers/CheckOffers';
 import Signup from './Pages/Signup';
+import LoginSuccess from './LoginSuccess/LoginSuccess'
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
           <Route path='/cart' element={<Cart/>}/>
           <Route path='/login' element={<LoginSignIn/>}/>
           <Route path='/signup' element={<Signup/>}/>
+          <Route path='/loginsuccess' element={<LoginSuccess/>}/>
         </Routes>
       </BrowserRouter>
       <Footer />
