@@ -3,8 +3,10 @@ import * as Yup from 'yup';
 import { Link } from 'react-router-dom';
 import MyGoogleLogin from './Google';
 import './CSS/LoginSignIn.css'
+import { useNavigate } from 'react-router-dom';
 
 const LoginSignIn = () => {
+  const navigate = useNavigate();
 
   const validationSchema = Yup.object({
     email: Yup.string().email('Invalid email address').required('Email is required'),
@@ -16,6 +18,31 @@ const LoginSignIn = () => {
       <Formik
         initialValues={{ email: '', password: '' }}
         validationSchema={validationSchema}
+        onSubmit={(values, actions) => {
+          // Perform API request for login
+          fetch('https://apilogin-mvf1.onrender.com/admin/authenticate', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(values),
+          })
+            .then((response) => {
+              if (response.ok) {
+                // If the login is successful, navigate to /loginsuccess
+                navigate.push('/loginsuccess');
+              } else {
+                // Handle unsuccessful login, you might want to display an error message
+                console.error('Login failed');
+              }
+            })
+            .catch((error) => {
+              console.error('Error during login:', error);
+            })
+            .finally(() => {
+              actions.setSubmitting(false); // Set this to false when the submission is complete
+            });
+        }}
       >
         <Form>
           <div className='loginsignin'>
