@@ -25,7 +25,6 @@ const SignUp = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(values),
-
       });
 
       if (!response.ok) {
