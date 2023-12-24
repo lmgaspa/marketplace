@@ -133,4 +133,10 @@
     .signup-agree input {
         width: auto;
     }
+
+    .signup-login {
+ display: flex;
+ width: 120%;
+ font-size: 16px;
+    }
 }

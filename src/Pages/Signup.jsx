@@ -1,49 +1,57 @@
-import React from 'react';
+
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import './CSS/Signup.css';
 import { Link } from 'react-router-dom';
 import MyGoogleLogin from './Google';
+import './CSS/SignUp.css';
+import { useNavigate } from 'react-router-dom';
 
-const Signup = () => {
-  const initialValues = {
-    name: '',
-    email: '',
-    password: '',
-  };
-
+const SignUp = () => {
+  const navigate = useNavigate();
   const validationSchema = Yup.object({
     name: Yup.string().required('Name is required'),
     email: Yup.string().email('Invalid email address').required('Email is required'),
     password: Yup.string().min(8).required('Password is required'),
   });
 
-  const onSubmit = async (values, { setSubmitting, setErrors }) => {
+  const handleSubmit = async (values, { setSubmitting }) => {
     try {
-      const response = await fetch('https://152.67.40.201:4406/register', {
+      const apiUrl = 'https://apilogin-mvf1.onrender.com/auth/register';
+
+      const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
+          'accept': 'application/json',
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(values),
       });
 
-      if (response.ok) {
-        console.log('User registered successfully!');
-      } else {
-        const errorData = await response.json(); // Se o back-end enviar detalhes de erro em JSON
-        console.error('Failed to register user:', errorData);
-        setErrors(errorData); // Define os erros no formulário para exibir mensagens de erro ao usuário
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
       }
+
+      // Assuming the backend returns some data, you can handle it here
+      const result = await response.json();
+      console.log('User creation successful:', result);
+
+      // Redirect to the success page
+      navigate('/loginsuccess', { state: { name: values.name } });
+
     } catch (error) {
-      console.error('Error during registration:', error);
+      console.error('Error creating user:', error.message);
+      // Handle error, e.g., show an error message to the user
     } finally {
       setSubmitting(false);
     }
   };
-
+      
   return (
-    <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
+    <Formik
+      initialValues={{ name: '', email: '', password: '' }}
+      validationSchema={validationSchema}
+      onSubmit={handleSubmit}  // Add this onSubmit handler
+    >
       <Form>
         <div className="signup">
           <div className="signup-container">
@@ -51,9 +59,19 @@ const Signup = () => {
             <div className="signup-fields">
               <Field type="text" name="name" placeholder="Your Name" />
               <ErrorMessage name="name" component="div" className="error-message" style={{ color: 'red', display: 'flex', justifyContent: 'center' }} />
-              <Field type="email" name="email" placeholder="Email Address" />
+              <Field
+                type="text"
+                id="email"
+                name="email"
+                placeholder="Email Address"
+              />
               <ErrorMessage name="email" component="div" className="error-message" style={{ color: 'red', display: 'flex', justifyContent: 'center' }} />
-              <Field type="password" name="password" placeholder="Password" />
+              <Field
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Password"
+              />
               <ErrorMessage name="password" component="div" className="error-message" style={{ color: 'red', display: 'flex', justifyContent: 'center' }} />
             </div>
             <button type="submit">Sign Up</button>
@@ -63,9 +81,9 @@ const Signup = () => {
                 <span>Login here</span>
               </Link>
             </p>
-            <div id="googleAuth" className='gauth'>
-                  <MyGoogleLogin />
-                </div>
+            <div id="googleAuth" className="gauth">
+              <MyGoogleLogin />
+            </div>
           </div>
         </div>
       </Form>
@@ -73,4 +91,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default SignUp;

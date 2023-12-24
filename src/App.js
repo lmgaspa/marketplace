@@ -16,8 +16,9 @@ import Company from './PagesFooter/Company';
 import ProductsFooter from './PagesFooter/ProductsFooter';
 import Latest from './Components/Latest/Latest';
 import CheckOffers from './Components/CheckOffers/CheckOffers';
-import Signup from './Pages/Signup';
 import LoginSuccess from './LoginSuccess/LoginSuccess'
+import SignUp from './Pages/SignUp';
+import RegisterSuccess from './LoginSuccess/RegisterSuccess';
 
 function App() {
   return (
@@ -40,11 +41,13 @@ function App() {
           </Route>
           <Route path='/cart' element={<Cart/>}/>
           <Route path='/login' element={<LoginSignIn/>}/>
-          <Route path='/signup' element={<Signup/>}/>
+          <Route path='/signup' element={<SignUp/>}/>
           <Route path='/loginsuccess' element={<LoginSuccess/>}/>
+          <Route path='/registersuccess' element={<RegisterSuccess />}/>
         </Routes>
       </BrowserRouter>
       <Footer />
+      
     </div>
   );
 }

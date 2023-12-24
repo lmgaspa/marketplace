@@ -57,7 +57,7 @@ const Navbar = () => {
           <button>Login</button>
         </Link>
         <Link to='/signup'>
-          <button>Signup</button>
+          <button>Sign Up</button>
           <img className="login-inv" src={loginicon} alt=""></img>
         </Link>
         <Link to='/cart'>
