@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { Link } from 'react-router-dom';
@@ -16,17 +16,20 @@ const SignUp = () => {
 
   const handleSubmit = async (values, { setSubmitting }) => {
     try {
-      const apiUrl = 'https://152.67.40.201:4406/register';
+      const apiUrl = 'https://apilogin-mvf1.onrender.com/auth/register';
 
       const response = await fetch(apiUrl, {
         method: 'POST',
-        mode: 'cors', // Adicione esta linha
         headers: {
           'accept': 'application/json',
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(values),
       });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
 
       // Assuming the backend returns some data, you can handle it here
       const result = await response.json();
