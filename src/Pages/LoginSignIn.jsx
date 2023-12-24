@@ -1,4 +1,4 @@
-import React from 'react';
+import {useState} from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { Link, useNavigate } from 'react-router-dom';
@@ -7,6 +7,7 @@ import './CSS/LoginSignIn.css';
 
 const LoginSignIn = () => {
   const navigate = useNavigate();
+  const [loginError, setLoginError] = useState(null);
 
   const validationSchema = Yup.object({
     email: Yup.string().email('Invalid email address').required('Email is required'),
@@ -25,7 +26,8 @@ const LoginSignIn = () => {
 
       if (!response.ok) {
         const errorData = await response.json();
-        throw new Error(`Login failed: ${errorData.message}`);
+        setLoginError(`Login failed: "User or Password wrong!"`);
+      throw new Error(`Login failed: ${errorData.message}`);
       }
 
       const data = await response.json();
@@ -63,6 +65,7 @@ const LoginSignIn = () => {
                 <ErrorMessage name="email" component="div" className="error-message" style={{ color: 'red', display: 'flex', justifyContent: 'center' }} />
                 <Field type="password" name="password" placeholder='Password' />
                 <ErrorMessage name="password" component="div" className="error-message" style={{ color: 'red', display: 'flex', justifyContent: 'center' }} />
+                {loginError && <div className="error-message" style={{ color: 'red', display: 'flex', justifyContent: 'center' }}>{loginError}</div>}
               </div>
               <div className='containerbutton'>
                 <button className='button1' type="submit">Continue</button>
